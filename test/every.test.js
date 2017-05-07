@@ -17,5 +17,10 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true if all string\'s length is 5', () => {
+      const words = ['apple', 'loath', 'peter'];
+      expect(_.every(words, word => word.length === 5)).toBe(true);
+    });
+
   });
 });

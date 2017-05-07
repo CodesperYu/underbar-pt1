@@ -18,4 +18,17 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('rejects a string', () => {
+    const topping = {
+      topping1: 'bellpepper',
+      topping2: 'sausage',
+      topping3: 'pepperoni',
+      topping4: 'olives',
+      topping5: 'empty',
+      topping6: 'empty'
+    };
+    const theseBelong = _.reject(topping, tops => tops === 'empty');
+    expect(theseBelong).toEqual(['bellpepper', 'sausage', 'pepperoni', 'olives']);
+  });
 });

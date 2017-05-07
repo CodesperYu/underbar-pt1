@@ -11,4 +11,9 @@ describe('some()', () => {
     expect(_.some(nums, num => num % 2 === 1)).toBe(false);
   });
 
+  it('returns false if no knows javascript', () => {
+    const languages = ['java', 'python', 'ruby'];
+    expect(_.some(languages, language => language === 'javascript')).toBe(false); 
+  });
+
 });

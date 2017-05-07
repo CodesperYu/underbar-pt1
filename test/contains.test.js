@@ -31,4 +31,15 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if the target value is a false, to be true', () => {
+    const booleans = [false, 'apples', 4];
+    expect(_.contains(booleans, false)).toBe(true);
+  });
+
+  it ('returns a result of a function within an object', () => {
+    const answers = {
+      'willBeFalse': 3 > 9
+    };
+    expect(_.contains(answers, false)).toBe(true);
+  });
 });

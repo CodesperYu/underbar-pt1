@@ -39,5 +39,23 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  it('iterates every object of an object, passing the corresponding arrays, and the entire object to the callback', () => {
+    const obj = {
+      apples: {color: 'red', type: 'pome'},
+      watermelon: {color: 'green', type: 'berry'},
+      oranges: {color: 'orange', type: 'citrus'}
+    };
+    let count = 0;
+    _.each(obj, function(object, key, iteratedObj) {
+      console.log(object);
+      console.log(key);
+      console.log(iteratedObj);
+      console.log(iteratedObj[key]);
+      expect(object).toEqual(iteratedObj[key]);
+      count +=1;
+    })
+    expect(count).toBe(3);
+  });
 });
 

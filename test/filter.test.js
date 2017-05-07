@@ -23,4 +23,10 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters out all the words that contains a letter bettween a and k', () => {
+    const words = ['people', 'elephant', 'Korean', 'Xylophone', 'crocodile'];
+    expect(_.filter(words, word => word.toUpperCase().charCodeAt(0) <= 76)).toEqual(['elephant', 'Korean', 'crocodile']);
+  });
+
 });

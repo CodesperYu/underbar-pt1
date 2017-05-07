@@ -7,15 +7,26 @@ describe('isArrayLike()', () => {
 
   it('returns true for an array-like object', () => {
     const arrayLikeObj = {
-      length: 10
+      length: 10,
+      letsGo: 40,
+      'people': 'peep'
     };
     expect(_.isArrayLike(arrayLikeObj)).toBe(true);
   });
 
   it('returns false for a non-array-like object', () => {
     const nonArrayLikeObj = {
-      'foo': 'bar'
+      'foo': 'bar',
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
+  });
+
+  it('returns true for an Array like object with non-array-like properties', () => {
+    const arrayLikeObj = {
+      'people': 'peep',
+      length: 10,
+      letsGo: 40,
+    };
+  expect(_.isArrayLike(arrayLikeObj)).toBe(true);
   });
 });

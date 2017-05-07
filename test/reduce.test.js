@@ -13,4 +13,10 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('returns highest number in the array', () => {
+    const nums = [20, 7, 50, 10, 13];
+    const result = _.reduce(nums, (acc, num) => acc < num ? num : acc); 
+    expect(result).toEqual(50);
+  });
+
 });

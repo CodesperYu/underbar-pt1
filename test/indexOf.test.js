@@ -26,4 +26,9 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('start searching at the given offset at the end of array but given -1 because the number was passed', () => {
+    const num = [0, 1, 2, 3, 4, 5];
+    expect(_.indexOf(num, 4, 5)).toBe(-1);
+  });
+
 });

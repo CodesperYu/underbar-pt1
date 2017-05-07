@@ -6,4 +6,10 @@ describe('map()', () => {
     const mappedArr = _.map(arr, (el) => el * el);
     expect(mappedArr).toEqual([1, 4, 9, 16, 25]);
   });
+
+  it('maps all number to the nearest 10th', () => {
+    const numbers = [43, 95, 27, 83];
+    const mappedArr = _.map(numbers, number => Math.round(number/10)*10);
+    expect(mappedArr).toEqual([40, 100, 30, 80]);
+  });
 });

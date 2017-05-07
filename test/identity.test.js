@@ -20,4 +20,9 @@ describe('identity()', () => {
     };
     expect(_.identity(val)).toBe(val);
   });
+
+  it('returns string when given a string', () => {
+    expect(_.identity('string')).toBe('string');
+  });
+  
 });
